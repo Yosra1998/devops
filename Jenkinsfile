@@ -27,4 +27,14 @@ pipeline{
                         }
                     }
             }
+          stage('Integration testing'){
+
+                     steps{
+
+                         script{
+
+                             bat 'mvn verify -DskipUnitTests'
+                         }
+                     }
+                 }
      }}
