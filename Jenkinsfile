@@ -79,7 +79,7 @@ pipeline{
                                script{
                                    def readPomVersion = readMavenPom file :'pom.xml'
                                    nexusArtifactUploader artifacts:
-                                    [[artifactId: 'demo', classifier: '', file: 'target/demo-1.0.0.jar', type: 'jar', type: 'jar']],
+                                    [[artifactId: 'demo', classifier: '', file: 'target/demo-1.0.1.jar', type: 'jar', type: 'jar']],
                                     credentialsId: 'nexus-auth',
                                     groupId: 'com.insat',
                                     nexusUrl: 'localhost:8081',
