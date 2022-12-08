@@ -72,4 +72,21 @@ pipeline{
                             }
                         }
                     }
+                    stage('import file to nexus'){
+
+                           steps{
+
+                               script{
+                                   nexusArtifactUploader artifacts:
+                                    [[artifactId: 'demo', classifier: '', file: 'target/Journal.jar', type: 'jar']],
+                                    credentialsId: '',
+                                    groupId: 'com.insat',
+                                    nexusUrl: 'localhost:8081',
+                                    nexusVersion: 'nexus3',
+                                    protocol: 'http',
+                                    repository: 'demoapp-release',
+                                    version: '1.0.0'
+                                }
+                           }
+                   }
      }}
