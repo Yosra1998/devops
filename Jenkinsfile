@@ -84,7 +84,7 @@ pipeline{
                    }
                    stage('Docker Image Build'){
                     steps{
-                        bat 'docker build -t DemoApplication:v1.29'
+                        bat 'docker build . -t getintodevops-hellonode:1'
 
                     }
                    }
