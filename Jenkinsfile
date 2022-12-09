@@ -62,16 +62,7 @@ pipeline{
 
                         }
                     }
-                    stage('Quality Gate Status'){
 
-                        steps{
-
-                            script{
-
-                                waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
-                            }
-                        }
-                    }
                     stage('import file to nexus'){
 
                            steps{
