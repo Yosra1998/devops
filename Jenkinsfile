@@ -93,9 +93,9 @@ pipeline{
                    }
                    stage('Docker Image Build'){
                     steps{
-                        bat 'docker image build -t $job_name:v1.$BUILD_ID'
-                        bat 'docker image tag $job_name:v1.$BUILD_ID yosra112/$job_name:v1.$BUILD_ID'
-                        bat 'docker image tag $job_name:v1.$BUILD_ID yosra112/$job_name:latest'
+                        bat 'docker image build -t DemoApplication:v1.29'
+                        bat 'docker image tag $DemoApplication:v1.29 yosra112/DemoApplication:v1.29'
+                        bat 'docker image tag DemoApplication:v1.29 yosra112/DemoApplication:latest'
                     }
                    }
      }}
